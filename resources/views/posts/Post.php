@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illumnate\Database\Eloquent\SoftDeletes;
 
-class Post extends Mpdel
+class Post extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     
     public function getPaginateByLimit(int $limit_count = 5)
     {
