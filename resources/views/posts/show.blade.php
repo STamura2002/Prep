@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html long="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -9,17 +9,19 @@
    
     </head>
     <body class="antialiased">
-        <h1 class="title">
+        <h1 class='title'>
             {{ $post->title }}
         </h1>
         <div class="content">
-            <div class="content__post">
-                <h3>本文</h3>
-                <p>{{ $post->body }}</p>    
-            </div>
+        <div class='content__post'>
+                <h2>本文</h2>
+                <p class='body'>{{ $post->body }}</p>
         </div>
-        <div class="footer">
-            <a href="/">戻る</a>
+        <div class='edit'>
+            <a href='/posts/{{ $post->id }}>/edit'>edit</a>
+        </div>
+            <div class='footer'>
+                <a href='/'>戻る</a>
         </div>
     </body>
 </html>
