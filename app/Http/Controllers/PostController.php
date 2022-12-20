@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Post;
 use Illuminate\Http\Requests\PostRequest;
+use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
     public function index(Post $post)
     {
+
         return view('posts/index')->with(['post' => $post->getPaginateByLimit()]);
+
     }
     
     public function show(Post $post)
@@ -21,7 +26,6 @@ class PostController extends Controller
     {
         return view('posts/create');
     }
-    
     public function store(Post $post, PostRequest $request)
     {
         $input = $request['post'];
