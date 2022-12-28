@@ -10,14 +10,15 @@
     <body class="antialiased">
         <h1>Blog Name</h1>
         <a href="/posts/create">create</a>
-        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
         <div class='posts'>
             @foreach ($posts as $post)
+            <p>繰り返し</p>
                 <div class='posts'>
                     <h2 class='title'>
-                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>"
+                    <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>"
                     </h2>
                     <p class='body'>{{ $post->body }}</p>
+                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')

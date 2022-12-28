@@ -10,7 +10,6 @@
     <body class="antialiased">
         <h1>Blog Name</h1>
         <a href="/posts/create">create</a>
-        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='posts'>
@@ -18,6 +17,7 @@
                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>"
                     </h2>
                     <p class='body'>{{ $post->body }}</p>
+                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                 </div>
             @endforeach
         </div>
