@@ -22,15 +22,15 @@
                 <textarea name="post[body]" placeholder="今日も一日お疲れさまでした。">{{ old('post.body') }}</textarea>
             </div>
             <input type="submit" value="保存">
+             <h2>Category</h2>
+            <select name="post[category_id]">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
         </form>
         <div class="back">[<a href="/"></a>]</div>
         <div class="category">
-        <h2>Category</h2>
-        <select name="post[category_id]">
-            @foreach($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
-            @endforeach
-        </select>
         </div>
     </body>
 </html>
